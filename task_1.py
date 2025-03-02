@@ -1,7 +1,5 @@
 from abc import ABC, abstractmethod
-import logging
-
-logging.basicConfig(level=logging.INFO)
+from logger import logger
 
 
 class Vehicle(ABC):
@@ -16,12 +14,12 @@ class Vehicle(ABC):
 
 class Car(Vehicle):
     def start_engine(self) -> None:
-        logging.info("%s %s : Двигун запущено", self.make, self.model)
+        logger.info("%s %s : Двигун запущено", self.make, self.model)
 
 
 class Motorcycle(Vehicle):
     def start_engine(self) -> None:
-        logging.info("%s %s  : Мотор заведено", self.make, self.model)
+        logger.info("%s %s  : Мотор заведено", self.make, self.model)
 
 
 class VehicleFactory(ABC):
